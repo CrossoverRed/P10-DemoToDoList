@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class CustomAdapter extends ArrayAdapter {
     Context parent_context;
     int layout_id;
-    ArrayList<ToDoItem> versionList; 
+    ArrayList<ToDoItem> versionList;
 
     public CustomAdapter(Context context, int resource, ArrayList<ToDoItem> objects) {
         super(context, resource, objects);

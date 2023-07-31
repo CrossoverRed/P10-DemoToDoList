@@ -25,13 +25,30 @@ public class ToDoItem {
     public void setDate(Calendar date){
         this.date=date;
     }
+
+    public String toString1() {
+        String str = date.get(Calendar.DAY_OF_MONTH)+"/"+date.get(Calendar.MONTH)
+                +"/"+date.get(Calendar.YEAR) + " (" + getDay(date.get(Calendar.DAY_OF_WEEK)) + ")";
+        return str;
+    }
+
     @NonNull
     @Override
     public String toString() {
-        String str = date.get(Calendar.DAY_OF_MONTH)+"/"+date.get(Calendar.MONTH)
-                +"/"+date.get(Calendar.YEAR) + " (" + getDay(date.get(Calendar.DAY_OF_WEEK)) + ")";
+        String str = date.get(Calendar.DAY_OF_MONTH) + " " +
+                getMonth(date.get(Calendar.MONTH)) + " " +
+                date.get(Calendar.YEAR) + " (" +
+                getDay(date.get(Calendar.DAY_OF_WEEK)) + ")";
 
         return str;
+    }
+
+    private String getMonth(int month) {
+        String[] months = new String[]{
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+        };
+        return months[month];
     }
 
     private String getDay(int day) {
